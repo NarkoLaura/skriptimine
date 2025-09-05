@@ -2,5 +2,5 @@
 # See skript tervitab kasutajat tema kasutajatunnusega
 
 echo -n "Tere, "
-echo -n $USER
+echo -n $(echo $USER | sed 's/.*/\u&/')
 echo "!"
