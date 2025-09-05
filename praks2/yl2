@@ -1,0 +1,8 @@
+#!/bin/bash
+# See skript väljastab kasutajale kuupäeva ja ajaga seotud info
+
+echo "Täna on: $(date +"%d.%m.%Y")"
+echo "Kell on: $(date +"%H:%M:%S")"
+echo "Nädalapäev: $(date +"%A")"
+echo "Kalender:"
+cal
