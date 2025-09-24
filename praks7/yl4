@@ -1,0 +1,19 @@
+#!/bin/bash
+# Skript väljastab tärnidest kolmnurga, kus tärnide arv reas kasvab.
+
+# Küsi ridade arvu
+read -p "Sisesta ridade arv: " rows
+
+# Välimine tsükkel ridade jaoks
+for (( i=1; i<=rows; i++ ))
+do
+    echo -n "$i.  "
+    # Sisemine tsükkel veergude jaoks
+    # Tärnide arv on võrdne rea numbriga
+    for (( j=1; j<=i; j++ ))
+    do
+        echo -n "* "
+    done
+    # Uus rida
+    echo ""
+done
