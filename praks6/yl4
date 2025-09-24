@@ -1,0 +1,31 @@
+#!/bin/bash
+# Skript kontrollib, kas sisestatud arv on algarv või mitte.
+
+echo -n "Sisesta suvaline arv: "
+read arv
+
+if test $arv -lt 2
+then
+    echo "$arv - ei ole algarv"
+    exit 0
+fi
+
+jagaja=2
+on_algarv=1
+
+while test $jagaja -lt $arv
+do
+    if test $((arv % jagaja)) -eq 0
+    then
+        on_algarv=0
+        break
+    fi
+    jagaja=$((jagaja + 1))
+done
+
+if test $on_algarv -eq 1
+then
+    echo "$arv - on algarv"
+else
+    echo "$arv - ei ole algarv"
+fi
