@@ -1,0 +1,26 @@
+#!/bin/bash
+# Skript loob tärnidest ja tühikutest "kasti", kasutades tingimuslauseid.
+
+# Küsi ridade arvu
+read -p "Sisesta ridade arv: " rows
+# Küsi tärnide arvu reas
+read -p "Sisesta tärnide arv reas: " stars
+
+# Välimine tsükkel ridade jaoks
+for (( i=1; i<=rows; i++ ))
+do
+    echo -n "$i.  "
+    # Sisemine tsükkel veergude jaoks
+    for (( j=1; j<=stars; j++ ))
+    do
+        # Tingimus tärni (*) või tühiku ( ) väljastamiseks
+        if [[ $i -eq 1 || $i -eq $rows || $j -eq 1 || $j -eq $stars ]]
+        then
+            echo -n "* "
+        else
+            echo -n "  " # Kaks tühikut
+        fi
+    done
+    # Uus rida
+    echo ""
+done
