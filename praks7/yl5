@@ -1,0 +1,25 @@
+#!/bin/bash
+# Skript kombineerib tärnid ja ringid, moodustades vastupidise kolmnurga.
+
+# Küsi ridade arvu
+read -p "Sisesta ridade arv: " rows
+
+# Välimine tsükkel ridade jaoks
+for (( i=1; i<=rows; i++ ))
+do
+    echo -n "$i.  "
+    # Sisemine tsükkel sümbolite jaoks
+    for (( j=1; j<=rows; j++ ))
+    do
+        # Kui veeru number on väiksem või võrdne ridade arvu ja rea numbri vahega,
+        # siis väljasta 'o', muidu väljasta '*'
+        if (( j <= rows - i ))
+        then
+            echo -n "o "
+        else
+            echo -n "* "
+        fi
+    done
+    # Uus rida
+    echo ""
+done
