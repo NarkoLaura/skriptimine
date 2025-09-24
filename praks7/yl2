@@ -1,0 +1,21 @@
+#!/bin/bash
+# Skript küsib kasutajalt ridade ja tärnide arvu ning väljastab vastava kujundi.
+
+# Küsi ridade arvu
+read -p "Sisesta ridade arv: " rows
+# Küsi tärnide arvu reas
+read -p "Sisesta tärnide arv reas: " stars
+
+# Välimine tsükkel ridade jaoks
+for (( i=1; i<=rows; i++ ))
+do
+    # Väljasta rea number
+    echo -n "$i.  "
+    # Sisemine tsükkel tärnide jaoks
+    for (( j=1; j<=stars; j++ ))
+    do
+        echo -n "* "
+    done
+    # Väljasta uus rida
+    echo ""
+done
