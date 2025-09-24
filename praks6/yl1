@@ -1,0 +1,14 @@
+#!/bin/bash
+# Skript arvutab 1 kuni 10 paarisarvude summa.
+
+summa=0
+
+for arv in {1..10}
+do
+    if test $((arv % 2)) -eq 0
+    then
+        summa=$((summa + arv))
+    fi
+done
+
+echo "Arvude vahemikus 1 kuni 10 (kaasaarvatud) paarisarvude summa on: $summa"
