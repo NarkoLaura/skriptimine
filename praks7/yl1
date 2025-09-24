@@ -1,0 +1,16 @@
+#!/bin/bash
+# Skript väljastab 5x5 tärnidest koosneva ruudu.
+# Kasutab sisseehitatud for tsükleid.
+
+for (( i=1; i<=5; i++ ))
+do
+    # Väljastame rea numbri
+    echo -n "$i.  "
+    # Sisemine tsükkel tärnide väljastamiseks
+    for (( j=1; j<=5; j++ ))
+    do
+        echo -n "* "
+    done
+    # Uus rida
+    echo ""
+done
